@@ -34,11 +34,30 @@ int length(node* h){
     return l;
 
 }
+void sum_even_odd(node* &h){
+    node* tmp=h;
+     int sum_e=0;
+     int sum_o=0;
+     while(tmp!=NULL){
+     if(tmp->data%2==0){
+     sum_e+=tmp->data;
+        
+    }
+    else{
+        sum_o+=tmp->data;
+    }
+    tmp=tmp->nxt;
+}
+cout<<"sum of even number  = "<<sum_e<<"\n";
+cout<<"sum of odd number  = "<<sum_o;
+}
 int main(){
     node *h = new node (6);
     insrthead(h,26);
     insrthead(h,5);
-    insrthead(h,6);
+    insrthead(h,8);
+    insrthead(h,9);
     show(h);
-    cout<<length(h);
+    sum_even_odd(h);
+    //cout<<length(h)<<endl;
 }
